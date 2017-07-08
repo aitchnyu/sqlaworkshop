@@ -1,7 +1,8 @@
 from flask import Flask
 from extensions import db, migrate
-from scripts import meow, populate, query
+from scripts import populate, query
 from views import orders
+
 
 def create_app():
     app = Flask(__name__)
@@ -11,7 +12,6 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
     app.add_url_rule('/orders', view_func=orders, methods=['get'])
-    app.cli.command()(meow)
     app.cli.command()(populate)
     app.cli.command()(query)
     return app

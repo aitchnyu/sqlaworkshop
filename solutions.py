@@ -24,10 +24,15 @@ def query():
         print(person)
 
     person_order_query = session.query(Person, Order).filter(Order.person_id == Person.id)
-    person_order_query = session.query(Person, Order).join(Order)
+    person_order_query = session.query(Person, Order).join(Order).order_by(Order.price)
+    person_order_query = session.query(Person, Order) \
+        .join(Order) \
+        .distinct(Person.id) \
+        .from_self() \
+        .order_by(Order.price)
     print_generated_query('person and order', person_order_query)
     for person, order in person_order_query:
-        print('person and order', person, order)
+        print person, order
 
     sum = func.sum(Order.price)
     count = func.count()

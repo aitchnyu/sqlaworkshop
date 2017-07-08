@@ -1,3 +1,7 @@
+# Flask and Effective SQlAlchemy
+
+Workshop for KochiPython July 2017 Meetup
+
 ## Install postgres and libraries
 
 sudo apt-get install postgresql libpq-dev postgresql-client postgresql-client-common
@@ -9,7 +13,7 @@ alter user postgres password 'postgres'
 
 create database sqlaworkshop;
 
-# Python, pip, venv
+## Python, pip, venv
 
 sudo apt-get install python-pip python-virtualenv
 

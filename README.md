@@ -9,7 +9,7 @@ sudo apt-get install postgresql libpq-dev postgresql-client postgresql-client-co
 
 sudo -u postgres psql
 
-alter user postgres password 'postgres'
+alter user postgres password 'postgres';
 
 create database sqlaworkshop;
 
